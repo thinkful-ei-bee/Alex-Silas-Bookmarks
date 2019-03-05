@@ -15,10 +15,12 @@ const bookmarkList = (function() {
     $('.bookmarkList').empty();
 
     store.bookmarks.forEach((item) => {
-      if(item.detailed){
-        $('.bookmarkList').append(addingDetailedBookmark(item.title, item.rating, item.id, item.url, item.desc));
-      } else {
-        $('.bookmarkList').append(addingDefaultBookmark(item.title, item.rating, item.id));
+      if(item.rating >= store.ratingSearch){
+        if(item.detailed){
+          $('.bookmarkList').append(addingDetailedBookmark(item.title, item.rating, item.id, item.url, item.desc));
+        } else {
+          $('.bookmarkList').append(addingDefaultBookmark(item.title, item.rating, item.id));
+        }
       }
     });
   }
@@ -80,7 +82,7 @@ const bookmarkList = (function() {
             </div>
             <div class="expanded-bookmark">
                 <p>${desc}</p>
-                <button type="button" onclick="location.href='${url}'" class="visit-site-button">Visit Site</button>
+                <button type="button" class="visit-site-button" data-item-url="${url}">Visit Site</button>
                 <button type="button" class="delete-button">Delete</button>
             </div>
         </div>`;
@@ -95,6 +97,12 @@ const bookmarkList = (function() {
           store.deleteBookmark(itemId);
           render();
         });
+    });
+  }
+
+  function handleVisitSite(){
+    $('.bookmarkList').on('click', '.visit-site-button', event => {
+      window.open($(event.currentTarget).data('item-url'));
     });
   }
 
@@ -145,7 +153,8 @@ const bookmarkList = (function() {
   }
 
   function submitErrorCheck(url){
-    if(url.length >= 7 && (url.substring(0, 8) === 'http://' || url.substring(0, 9) === 'https://')){
+    console.log(url.substring(0,9));
+    if(url.length >= 7 && (url.substring(0, 7) === 'http://' || url.substring(0, 8) === 'https://')){
       return true;
     } else {
       return false;
@@ -167,7 +176,7 @@ const bookmarkList = (function() {
     //handlefilter
 
     handleToggleExpand();
-    //handleVisitLink()
+    handleVisitSite();
     handleDelete();
 
     /*handleEdit*/
