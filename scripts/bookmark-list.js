@@ -86,6 +86,18 @@ const bookmarkList = (function() {
         </div>`;
   }
 
+  function handleDelete(){
+    $('.bookmarkList').on('click', '.delete-button', event => {
+      console.log('deleted something');
+      const itemId = $(event.currentTarget).closest('.item-container').data('item-id');
+      api.deleteItem(itemId)
+        .then(() => {
+          store.deleteBookmark(itemId);
+          render();
+        });
+    });
+  }
+
   function handleNewAddBookMark() {
     $('.beginButtons').on('click', '.addButton', event => {
       store.addingBookmark = true;
@@ -156,7 +168,7 @@ const bookmarkList = (function() {
 
     handleToggleExpand();
     //handleVisitLink()
-    //handleDelete
+    handleDelete();
 
     /*handleEdit*/
   }

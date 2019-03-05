@@ -14,6 +14,10 @@ const store = (function() {
     return this.bookmarks.find(x => x.id === id);
   };
 
+  const deleteBookmark = function(id){
+    this.bookmarks = this.bookmarks.filter(x => x.id !== id);
+  };
+
   return {
     bookmarks: [],
     ratingSearch: 1,
@@ -22,5 +26,6 @@ const store = (function() {
     addBookmark,
     setFilter,
     findItemById,
+    deleteBookmark,
   };
 })();
