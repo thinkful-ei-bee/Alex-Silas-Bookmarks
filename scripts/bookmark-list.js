@@ -1,4 +1,4 @@
-/* global store */
+/* global store, api */
 'use strict';
 
 const bookmarkList = (function() {
@@ -70,6 +70,13 @@ const bookmarkList = (function() {
         alert('ender valid url address');
       } else {
         console.log(title, url, desc, ans);
+        api.createItem(title, url, desc, ans)
+          .then(res => res.json())
+          .then((newItem) => {
+            store.addBookmark(newItem);
+            render();
+          });
+
       }
     });
     //take input from form
