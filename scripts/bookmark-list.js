@@ -15,8 +15,8 @@ const bookmarkList = (function() {
     $('.bookmarkList').empty();
 
     store.bookmarks.forEach((item) => {
-      if(item.rating >= store.ratingSearch){
-        if(item.detailed){
+      if (item.rating >= store.ratingSearch) {
+        if (item.detailed) {
           $('.bookmarkList').append(addingDetailedBookmark(item.title, item.rating, item.id, item.url, item.desc));
         } else {
           $('.bookmarkList').append(addingDefaultBookmark(item.title, item.rating, item.id));
@@ -60,37 +60,52 @@ const bookmarkList = (function() {
 
   function addingBeginButtonTemplate() {
     return `<button type="button" class="addButton">Add a new bookmark</button>
-      <button type="button" class="filterButton">Filter bookmarks by rating</button>`;
+            <form id ="js-search-filter">
+                <select class="rate">
+                    <option selected="selected">${store.ratingSearch}</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="submit" class="submit-filter">Filter by Rating</button>
+            </form>`;
   }
 
-  function addingDefaultBookmark(title, rating, id){
-    return `
-      <div class="item-container" data-item-id="${id}">
-        <div class="default-bookmark">
-            <h2>${title}</h2>
-            <div class="rating">${rating}</div>
-        </div>
-      </div>
-    `;
+  function addingDefaultBookmark(title, rating, id) {
+    return ` <div class = "item-container" data-item-id = "${id}" >
+                 <div class = "default-bookmark">
+                     <h2>${title}</h2>
+                     <div class = "rating">${rating}</div> 
+                </div > 
+            </div>`;
   }
 
-  function addingDetailedBookmark(title, rating, id, url, desc){
-    return `<div class="item-container" data-item-id="${id}">
-            <div class="default-bookmark">
-                <h2>${title}</h2>
-                <div class="rating">${rating}</div>
-            </div>
-            <div class="expanded-bookmark">
-                <p>${desc}</p>
-                <button type="button" class="visit-site-button" data-item-url="${url}">Visit Site</button>
-                <button type="button" class="delete-button">Delete</button>
-            </div>
-        </div>`;
+  function addingDetailedBookmark(title, rating, id, url, desc) {
+    return ` <div class = "item-container" data-item-id="${id}" >
+                <div class = "default-bookmark" >
+                    <h2>${title}</h2>
+                    <div class="rating">${rating}< /div> 
+                </div > 
+                <div class = "expanded-bookmark">
+                    <p>${desc}</p>
+                    <button type = "button" class = "visit-site-button" data-item-url="${url}">Visit Site</button> 
+                    <button type = "button" class = "delete-button">Delete</button> 
+                </div > 
+            </div>`;
   }
 
-  function handleDelete(){
+  function handleFilter() {
+    $('.beginButtons').on('submit', '#js-search-filter', event => {
+      event.preventDefault();
+      store.ratingSearch = $('.rate option:selected').text();
+      render();
+    });
+  }
+
+  function handleDelete() {
     $('.bookmarkList').on('click', '.delete-button', event => {
-      console.log('deleted something');
       const itemId = $(event.currentTarget).closest('.item-container').data('item-id');
       api.deleteItem(itemId)
         .then(() => {
@@ -100,7 +115,7 @@ const bookmarkList = (function() {
     });
   }
 
-  function handleVisitSite(){
+  function handleVisitSite() {
     $('.bookmarkList').on('click', '.visit-site-button', event => {
       window.open($(event.currentTarget).data('item-url'));
     });
@@ -121,7 +136,7 @@ const bookmarkList = (function() {
       const url = $('.js-bookmark-url-entry').val();
       const desc = $('.js-bookmark-desc-entry').val();
       const ans = $('input[name=\'rating\']:checked').val();
-      if(!submitErrorCheck(url)){
+      if (!submitErrorCheck(url)) {
         alert('ender valid url address');
       } else {
         console.log(title, url, desc, ans);
@@ -142,8 +157,8 @@ const bookmarkList = (function() {
     //render should create html
   }
 
-  function handleToggleExpand(){
-    $('.bookmarkList').on('click', '.default-bookmark', function(e){
+  function handleToggleExpand() {
+    $('.bookmarkList').on('click', '.default-bookmark', function(e) {
       console.log('handleToggleExpand ran' + e.currentTarget);
       const itemId = $(e.currentTarget).parent().data('item-id');
       const storeItem = store.findItemById(itemId);
@@ -152,9 +167,9 @@ const bookmarkList = (function() {
     });
   }
 
-  function submitErrorCheck(url){
-    console.log(url.substring(0,9));
-    if(url.length >= 7 && (url.substring(0, 7) === 'http://' || url.substring(0, 8) === 'https://')){
+  function submitErrorCheck(url) {
+    console.log(url.substring(0, 9));
+    if (url.length >= 7 && (url.substring(0, 7) === 'http://' || url.substring(0, 8) === 'https://')) {
       return true;
     } else {
       return false;
@@ -173,7 +188,7 @@ const bookmarkList = (function() {
     handleNewAddBookMark();
     handleSubmit();
     handleCancel();
-    //handlefilter
+    handleFilter();
 
     handleToggleExpand();
     handleVisitSite();
