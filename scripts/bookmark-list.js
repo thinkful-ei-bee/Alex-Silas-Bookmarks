@@ -11,6 +11,16 @@ const bookmarkList = (function() {
       $('.container').html('');
       $('.beginButtons').html(addingBeginButtonTemplate());
     }
+
+    $('.bookmarkList').empty();
+
+    store.bookmarks.forEach((item) => {
+      if(item.detailed){
+        //$('.bookmarkList').append(Add expanded bookmarks);
+      } else {
+        $('.bookmarkList').append(addingDefaultBookmark(item.title, item.rating));
+      }
+    });
   }
 
   function addingBookmarkTemplate() {
@@ -51,6 +61,14 @@ const bookmarkList = (function() {
       <button type="button" class="filterButton">Filter bookmarks by rating</button>`;
   }
 
+  function addingDefaultBookmark(title, rating){
+    return `<div class="default-bookmark">
+            <h2>${title}</h2>
+            <div class="rating">${rating}</div>
+        </div>
+    `;
+  }
+
   function handleNewAddBookMark() {
     $('.beginButtons').on('click', '.addButton', event => {
       store.addingBookmark = true;
@@ -74,6 +92,7 @@ const bookmarkList = (function() {
           .then(res => res.json())
           .then((newItem) => {
             store.addBookmark(newItem);
+            store.addingBookmark = false;
             render();
           });
 

@@ -50,7 +50,18 @@
 
     <div class="bookmarkList">
         <!-- Add Html to print out our bookmarks (just do a ul) -->
-        
+        <div class="default-bookmark">
+            <h2>Title</h2>
+            <div class="rating">3</div>
+        </div>
+
+        <div class="expanded-bookmark">
+          <h2>Title</h2>
+          <div class="rating">3</div>
+          <p>Description</p>
+          <button type="button" onclick="location.href='url'" class="visit-site-button">Visit Site</button>
+          <button type="button" class="delete-button">Delete</button>
+        </div>
     </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
