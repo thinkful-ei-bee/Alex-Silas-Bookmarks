@@ -10,6 +10,10 @@ const store = (function() {
     this.ratingSearch = rating;
   };
 
+  const findItemById = function(id){
+    return this.bookmarks.find(x => x.id === id);
+  };
+
   return {
     bookmarks: [],
     ratingSearch: 1,
@@ -17,5 +21,6 @@ const store = (function() {
 
     addBookmark,
     setFilter,
+    findItemById,
   };
 })();

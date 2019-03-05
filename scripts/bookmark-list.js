@@ -16,7 +16,7 @@ const bookmarkList = (function() {
 
     store.bookmarks.forEach((item) => {
       if(item.detailed){
-        //$('.bookmarkList').append(Add expanded bookmarks);
+        $('.bookmarkList').append(addingDetailedBookmark(item.title, item.rating, item.id, item.url, item.desc));
       } else {
         $('.bookmarkList').append(addingDefaultBookmark(item.title, item.rating, item.id));
       }
@@ -72,6 +72,20 @@ const bookmarkList = (function() {
     `;
   }
 
+  function addingDetailedBookmark(title, rating, id, url, desc){
+    return `<div class="item-container" data-item-id="${id}">
+            <div class="default-bookmark">
+                <h2>${title}</h2>
+                <div class="rating">${rating}</div>
+            </div>
+            <div class="expanded-bookmark">
+                <p>${desc}</p>
+                <button type="button" onclick="location.href='${url}'" class="visit-site-button">Visit Site</button>
+                <button type="button" class="delete-button">Delete</button>
+            </div>
+        </div>`;
+  }
+
   function handleNewAddBookMark() {
     $('.beginButtons').on('click', '.addButton', event => {
       store.addingBookmark = true;
@@ -111,7 +125,10 @@ const bookmarkList = (function() {
   function handleToggleExpand(){
     $('.bookmarkList').on('click', '.default-bookmark', function(e){
       console.log('handleToggleExpand ran' + e.currentTarget);
-      console.log(e.currentTarget);
+      const itemId = $(e.currentTarget).parent().data('item-id');
+      const storeItem = store.findItemById(itemId);
+      storeItem.detailed = !storeItem.detailed;
+      render();
     });
   }
 
