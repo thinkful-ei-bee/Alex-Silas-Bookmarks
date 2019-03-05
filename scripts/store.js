@@ -10,11 +10,11 @@ const store = (function() {
     this.ratingSearch = rating;
   };
 
-  const findItemById = function(id){
+  const findItemById = function(id) {
     return this.bookmarks.find(x => x.id === id);
   };
 
-  const deleteBookmark = function(id){
+  const deleteBookmark = function(id) {
     this.bookmarks = this.bookmarks.filter(x => x.id !== id);
   };
 

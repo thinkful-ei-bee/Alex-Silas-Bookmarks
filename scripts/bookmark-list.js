@@ -23,6 +23,8 @@ const bookmarkList = (function() {
         }
       }
     });
+
+    $('.rate').val(`${store.ratingSearch}`);
   }
 
   function addingBookmarkTemplate() {
@@ -62,7 +64,7 @@ const bookmarkList = (function() {
     return `<button type="button" class="addButton">Add a new bookmark</button>
             <form id ="js-search-filter">
                 <select class="rate">
-                    <option selected="selected">${store.ratingSearch}</option>
+                    <!--<option selected="selected">${store.ratingSearch}</option>-->
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -77,8 +79,8 @@ const bookmarkList = (function() {
     return ` <div class = "item-container" data-item-id = "${id}" >
                  <div class = "default-bookmark">
                      <h2>${title}</h2>
-                     <div class = "rating">${rating}</div> 
-                </div > 
+                     <div class="rating">${rating}</div> 
+                </div> 
             </div>`;
   }
 
@@ -86,13 +88,13 @@ const bookmarkList = (function() {
     return ` <div class = "item-container" data-item-id="${id}" >
                 <div class = "default-bookmark" >
                     <h2>${title}</h2>
-                    <div class="rating">${rating}< /div> 
+                    <div class="rating">${rating}</div> 
                 </div > 
                 <div class = "expanded-bookmark">
                     <p>${desc}</p>
                     <button type = "button" class = "visit-site-button" data-item-url="${url}">Visit Site</button> 
                     <button type = "button" class = "delete-button">Delete</button> 
-                </div > 
+                </div> 
             </div>`;
   }
 
