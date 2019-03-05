@@ -6,9 +6,9 @@ const store = (function() {
     this.bookmarks.push(bookmark);
   }
 
-  const setFilter = function(rating {
+  const setFilter = function(rating) {
     this.ratingSearch = rating;
-  })
+  }
 
   return {
     bookmarks: [],
