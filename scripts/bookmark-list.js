@@ -16,9 +16,9 @@ const bookmarkList = (function() {
   function addingBookmarkTemplate() {
     return `<form id="js-adding-bookmark-form">
       <label for="bookmark-title-entry">Add a Bookmark Title</label>
-      <input type="text" name="bookmark-title-entry" class="js-bookmark-title-entry" placeholder="e.g., Google (Please input at least 1 character)">
+      <input type="text" name="bookmark-title-entry" class="js-bookmark-title-entry" required placeholder="e.g., Google (Please input at least 1 character)">
       <label for="bookmark-url-entry">Add a Bookmark Url</label>
-      <input type="text" name="bookmark-url-entry" class="js-bookmark-url-entry" placeholder="e.g., https://google.com (Please use http:// or https://)">
+      <input type="text" name="bookmark-url-entry" class="js-bookmark-url-entry" required placeholder="e.g., https://google.com (Please use http:// or https://)">
       <label for="bookmark-desc-entry">Add a Bookmark Description</label>
       <input type="text" name="bookmark-desc-entry" class="js-bookmark-desc-entry" placeholder="e.g., Search Engine (Optional)">
       <label class="block">
@@ -41,7 +41,7 @@ const bookmarkList = (function() {
           <input type="radio" name="rating" required="required" value="5">
           <span>5</span>
         </label>
-      <button type="submit">Add Bookmark</button>
+      <button type="submit" class="submit-bookmark">Add Bookmark</button>
       <button type="button" class="cancelButton">Cancel</button>
   </form>`;
   }
@@ -59,15 +59,32 @@ const bookmarkList = (function() {
   }
 
   function handleSubmit() {
-    $('#js-adding-bookmark-form').submit(function(event) {
+    $('.container').on('submit', '#js-adding-bookmark-form', event => {
       event.preventDefault();
       console.log($(event.currentTarget));
+      const title = $('.js-bookmark-title-entry').val();
+      const url = $('.js-bookmark-url-entry').val();
+      const desc = $('.js-bookmark-desc-entry').val();
+      const ans = $('input[name=\'rating\']:checked').val();
+      if(!submitErrorCheck(url)){
+        alert('ender valid url address');
+      } else {
+        console.log(title, url, desc, ans);
+      }
     });
     //take input from form
     //send to API (error check)
     //create bookmark
     //add bookmark to array
     //render should create html
+  }
+
+  function submitErrorCheck(url){
+    if(url.length >= 7 && (url.substring(0, 8) === 'http://' || url.substring(0, 9) === 'https://')){
+      return true;
+    } else {
+      return false;
+    }
   }
 
   function handleCancel() {
