@@ -18,7 +18,7 @@ const bookmarkList = (function() {
       if(item.detailed){
         //$('.bookmarkList').append(Add expanded bookmarks);
       } else {
-        $('.bookmarkList').append(addingDefaultBookmark(item.title, item.rating));
+        $('.bookmarkList').append(addingDefaultBookmark(item.title, item.rating, item.id));
       }
     });
   }
@@ -61,11 +61,14 @@ const bookmarkList = (function() {
       <button type="button" class="filterButton">Filter bookmarks by rating</button>`;
   }
 
-  function addingDefaultBookmark(title, rating){
-    return `<div class="default-bookmark">
+  function addingDefaultBookmark(title, rating, id){
+    return `
+      <div class="item-container" data-item-id="${id}">
+        <div class="default-bookmark">
             <h2>${title}</h2>
             <div class="rating">${rating}</div>
         </div>
+      </div>
     `;
   }
 
@@ -105,6 +108,13 @@ const bookmarkList = (function() {
     //render should create html
   }
 
+  function handleToggleExpand(){
+    $('.bookmarkList').on('click', '.default-bookmark', function(e){
+      console.log('handleToggleExpand ran' + e.currentTarget);
+      console.log(e.currentTarget);
+    });
+  }
+
   function submitErrorCheck(url){
     if(url.length >= 7 && (url.substring(0, 8) === 'http://' || url.substring(0, 9) === 'https://')){
       return true;
@@ -127,7 +137,7 @@ const bookmarkList = (function() {
     handleCancel();
     //handlefilter
 
-    //handleExpandedView
+    handleToggleExpand();
     //handleVisitLink()
     //handleDelete
 

@@ -1,3 +1,5 @@
+/* global cuid */
+
 'use strict';
 
 const bookmark = (function() {
@@ -15,5 +17,5 @@ const bookmark = (function() {
 
   return {
     create
-  }
+  };
 })();
