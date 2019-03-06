@@ -55,7 +55,7 @@ html {
 body {
   /*background: #000000;*/
   /*color: #f7f7f7;*/
-  font-size: 1.3em;
+  font-size: 30pt;
   font-family: 'Lato';
   padding: 0 10px;
 }
@@ -71,9 +71,39 @@ h1 {
   text-align: center;
 }
 
-.css-begin-button,
-#js-search-filter {
+.css-add-button {
+    width: 40%;
+    display: inline-block;
+    float: left;
+}
+
+.css-filter-button {
     width: 50%;
     display: inline-block;
     float: left;
+}
+
+.rate {
+    width: 10%;
+    display: inline-block;
+    float: right;
+}
+
+button {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.default-bookmark{
+    border: 1px solid black;
+    border-radius: 3px;
+    display: block;
+    clear: both;
+}
+
+.expanded-bookmark {
+    border: 1px solid black;
+    border-radius: 3px;
+    display: block;
+    clear: both;
 }

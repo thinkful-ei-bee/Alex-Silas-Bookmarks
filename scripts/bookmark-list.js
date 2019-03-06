@@ -69,7 +69,7 @@ const bookmarkList = (function() {
   }
 
   function addingBeginButtonTemplate() {
-    return `<button type="button" class="addButton css-begin-button">Add a new bookmark</button>
+    return `<button type="button" class="addButton css-add-button">Add a new bookmark</button>
             <form id ="js-search-filter">
                 <select class="rate">
                     <!--<option selected="selected">${store.ratingSearch}</option>-->
@@ -79,7 +79,7 @@ const bookmarkList = (function() {
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <button type="submit" class="submit-filter css-begin-button">Filter by Rating: </button>
+                <button type="submit" class="submit-filter css-filter-button">Filter by Rating: </button>
             </form>`;
   }
 
