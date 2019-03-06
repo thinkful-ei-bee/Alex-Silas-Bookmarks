@@ -136,3 +136,40 @@ p {
     padding-left: 15px;
     font-size: 20pt;
 }
+
+.item-container {
+    padding-top: 5%;
+}
+
+.js-bookmark-title-entry {
+    display: block;
+    width: 75%;
+    margin-bottom: 2%;
+}
+
+.js-bookmark-url-entry {
+    display: block;
+    width: 75%;
+    margin-bottom: 2%;
+}
+
+.js-bookmark-desc-entry {
+    display: block;
+    width: 75%;
+    margin-bottom: 2%;
+}
+
+.css-adding-form-buttons {
+    display: block;
+    margin-top: 2%;
+}
+
+input[type="radio"] {
+    border: 0px;
+    width: .75em;
+    height: .75em;
+}
+
+.banner {
+    color: red;
+}

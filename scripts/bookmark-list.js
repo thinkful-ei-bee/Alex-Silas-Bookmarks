@@ -8,7 +8,7 @@ const bookmarkList = (function() {
     if (store.errorStatement === '') {
       $('.errorBlock').html('');
     } else {
-      $('.errorBlock').html(`<p>${store.errorStatement}</p>`);
+      $('.errorBlock').html(`<div class="banner">${store.errorStatement}</div>`);
     }
 
     if (store.addingBookmark) {
@@ -38,11 +38,11 @@ const bookmarkList = (function() {
   function addingBookmarkTemplate() {
     return `<form id="js-adding-bookmark-form">
       <label for="bookmark-title-entry">Add a Bookmark Title</label>
-      <input type="text" name="bookmark-title-entry" class="js-bookmark-title-entry" required placeholder="e.g., Google (Please input at least 1 character)">
+      <input type="text" name="bookmark-title-entry" class="js-bookmark-title-entry" required placeholder="e.g., Google">
       <label for="bookmark-url-entry">Add a Bookmark Url</label>
-      <input type="text" name="bookmark-url-entry" class="js-bookmark-url-entry" required placeholder="e.g., https://google.com (Please use http:// or https://)">
+      <input type="text" name="bookmark-url-entry" class="js-bookmark-url-entry" required placeholder="e.g., https://google.com">
       <label for="bookmark-desc-entry">Add a Bookmark Description</label>
-      <input type="text" name="bookmark-desc-entry" class="js-bookmark-desc-entry" placeholder="e.g., Search Engine (Optional)">
+      <input type="text" name="bookmark-desc-entry" class="js-bookmark-desc-entry" placeholder="e.g., Search Engine">
       <label class="block">
           <input type="radio" name="rating" required="required" value="1">
           <span>1</span>
@@ -63,8 +63,8 @@ const bookmarkList = (function() {
           <input type="radio" name="rating" required="required" value="5">
           <span>5</span>
         </label>
-      <button type="submit" class="submit-bookmark">Add Bookmark</button>
-      <button type="button" class="cancelButton">Cancel</button>
+      <button type="submit" class="submit-bookmark css-adding-form-buttons">Add Bookmark</button>
+      <button type="button" class="cancelButton css-adding-form-buttons">Cancel</button>
   </form>`;
   }
 
@@ -182,7 +182,7 @@ const bookmarkList = (function() {
     store.errorStatement = error;
     setTimeout(() => {
       store.errorStatement = '';
-    }, 5000);
+    }, 3000);
   }
 
   function handleCancel() {
