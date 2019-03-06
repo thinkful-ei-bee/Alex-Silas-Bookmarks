@@ -139,7 +139,7 @@ const bookmarkList = (function() {
       const desc = $('.js-bookmark-desc-entry').val();
       const ans = $('input[name=\'rating\']:checked').val();
       if (!submitErrorCheck(url)) {
-        alert('ender valid url address');
+        alert('Please enter a url that starts with http:// or https://');
       } else {
         console.log(title, url, desc, ans);
         api.createItem(title, url, desc, ans)
