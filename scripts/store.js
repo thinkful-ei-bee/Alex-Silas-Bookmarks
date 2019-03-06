@@ -22,6 +22,7 @@ const store = (function() {
     bookmarks: [],
     ratingSearch: 1,
     addingBookmark: false,
+    errorStatement: '',
 
     addBookmark,
     setFilter,

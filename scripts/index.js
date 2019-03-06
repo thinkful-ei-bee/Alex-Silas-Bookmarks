@@ -7,9 +7,12 @@ $(document).ready(function() {
   bookmarkList.render();
 
   api.getItems()
-    .then(res => res.json())
+    //.then(res => res.json())
     .then((res) => {
       res.forEach((item) => store.addBookmark(item));
+      bookmarkList.render();
+    }).catch(error => {
+      bookmarkList.setError(error.message);
       bookmarkList.render();
     });
 });

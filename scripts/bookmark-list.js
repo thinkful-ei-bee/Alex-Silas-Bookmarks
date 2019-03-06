@@ -4,6 +4,13 @@
 const bookmarkList = (function() {
 
   function render() {
+
+    if (store.errorStatement === '') {
+      $('.errorBlock').html('');
+    } else {
+      $('.errorBlock').html(`<p>${store.errorStatement}</p>`);
+    }
+
     if (store.addingBookmark) {
       $('.container').html(addingBookmarkTemplate());
       $('.beginButtons').html('');
@@ -25,6 +32,7 @@ const bookmarkList = (function() {
     });
 
     $('.rate').val(`${store.ratingSearch}`);
+
   }
 
   function addingBookmarkTemplate() {
@@ -113,6 +121,9 @@ const bookmarkList = (function() {
         .then(() => {
           store.deleteBookmark(itemId);
           render();
+        }).catch(error => {
+          setError(error.message);
+          render();
         });
     });
   }
@@ -133,30 +144,24 @@ const bookmarkList = (function() {
   function handleSubmit() {
     $('.container').on('submit', '#js-adding-bookmark-form', event => {
       event.preventDefault();
-      console.log($(event.currentTarget));
+      //console.log($(event.currentTarget));
       const title = $('.js-bookmark-title-entry').val();
       const url = $('.js-bookmark-url-entry').val();
       const desc = $('.js-bookmark-desc-entry').val();
       const ans = $('input[name=\'rating\']:checked').val();
-      if (!submitErrorCheck(url)) {
-        alert('Please enter a url that starts with http:// or https://');
-      } else {
-        console.log(title, url, desc, ans);
-        api.createItem(title, url, desc, ans)
-          .then(res => res.json())
-          .then((newItem) => {
-            store.addBookmark(newItem);
-            store.addingBookmark = false;
-            render();
-          });
-
-      }
+      //console.log(title, url, desc, ans);
+      api.createItem(title, url, desc, ans)
+        //.then(res => res.json())
+        .then((newItem) => {
+          store.addBookmark(newItem);
+          store.addingBookmark = false;
+          render();
+        }).catch(error => {
+          //console.log(error);
+          setError(error.message);
+          render();
+        });
     });
-    //take input from form
-    //send to API (error check)
-    //create bookmark
-    //add bookmark to array
-    //render should create html
   }
 
   function handleToggleExpand() {
@@ -169,13 +174,11 @@ const bookmarkList = (function() {
     });
   }
 
-  function submitErrorCheck(url) {
-    console.log(url.substring(0, 9));
-    if (url.length >= 7 && (url.substring(0, 7) === 'http://' || url.substring(0, 8) === 'https://')) {
-      return true;
-    } else {
-      return false;
-    }
+  function setError(error) {
+    store.errorStatement = error;
+    setTimeout(() => {
+      store.errorStatement = '';
+    }, 5000);
   }
 
   function handleCancel() {
@@ -195,12 +198,11 @@ const bookmarkList = (function() {
     handleToggleExpand();
     handleVisitSite();
     handleDelete();
-
-    /*handleEdit*/
   }
 
   return {
     render: render,
     bindEventListeners: bindEventListeners,
+    setError: setError,
   };
 })();
