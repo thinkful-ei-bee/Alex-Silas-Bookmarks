@@ -87,7 +87,9 @@ const bookmarkList = (function() {
     return ` <div class = "item-container" data-item-id = "${id}" >
                  <div class = "default-bookmark">
                      <h2>${title}</h2>
-                     <div class="rating">${rating}</div> 
+                     <div class="rating">
+                        <span id="star">${rating} &#9733;</span>
+                     </div> 
                 </div> 
             </div>`;
   }
@@ -96,10 +98,12 @@ const bookmarkList = (function() {
     return ` <div class = "item-container" data-item-id="${id}" >
                 <div class = "default-bookmark" >
                     <h2>${title}</h2>
-                    <div class="rating">${rating}</div> 
+                    <div class="rating">
+                        <span id="star">${rating} &#9733;</span>
+                    </div> 
                 </div > 
                 <div class = "expanded-bookmark">
-                    <p>${desc}</p>
+                    <p>Description: ${desc}</p>
                     <button type = "button" class = "visit-site-button" data-item-url="${url}">Visit Site</button> 
                     <button type = "button" class = "delete-button">Delete</button> 
                 </div> 

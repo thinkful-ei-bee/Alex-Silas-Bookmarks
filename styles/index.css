@@ -1,18 +1,18 @@
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 .row::before,
 .row::after {
-  display: table;
-  content: " ";
-  clear: both;
+    display: table;
+    content: " ";
+    clear: both;
 }
 
 .one,
@@ -21,7 +21,7 @@ html {
 .one-fourth,
 .half,
 #js-adding-bookmark-form {
-  width: 100%;
+    width: 100%;
 }
 
 
@@ -31,44 +31,46 @@ html {
 */
 
 @media only screen and (min-width: 800px) {
-  .one {
-    width: 100%;
-  }
-  .half {
-    width: calc(100% / 2);
-  }
-  .one-third {
-    width: calc(100% / 3);
-  }
-  .one-fourth {
-    width: calc(100% / 4);
-  }
-  .two-thirds {
-    width: calc(100% / 3 * 2);
-  }
-  .column {
-    float: left;
-  }
+    .one {
+        width: 100%;
+    }
+    .half {
+        width: calc(100% / 2);
+    }
+    .one-third {
+        width: calc(100% / 3);
+    }
+    .one-fourth {
+        width: calc(100% / 4);
+    }
+    .two-thirds {
+        width: calc(100% / 3 * 2);
+    }
+    .column {
+        float: left;
+    }
 }
+
+
 /* Styling */
 
 body {
-  /*background: #000000;*/
-  /*color: #f7f7f7;*/
-  font-size: 30pt;
-  font-family: 'Lato';
-  padding: 0 10px;
+    /*background: #000000;*/
+    /*color: #f7f7f7;*/
+    font-size: 30pt;
+    font-family: 'Lato';
+    padding: 0 10px;
 }
 
 .column {
-  border: 1px solid #666;
-  background: #343436;
-  padding: 15px;
-  margin-bottom: 10px;
+    border: 1px solid #666;
+    background: #343436;
+    padding: 15px;
+    margin-bottom: 10px;
 }
 
 h1 {
-  text-align: center;
+    text-align: center;
 }
 
 .css-add-button {
@@ -94,11 +96,12 @@ button {
     border-radius: 5px;
 }
 
-.default-bookmark{
+.default-bookmark {
     border: 1px solid black;
     border-radius: 3px;
     display: block;
     clear: both;
+    margin-top: 5%;
 }
 
 .expanded-bookmark {
@@ -106,4 +109,30 @@ button {
     border-radius: 3px;
     display: block;
     clear: both;
+}
+
+#star {
+    font-size: 30pt;
+    color: yellow;
+    /* Some sort of border */
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.rating {
+    display: inline-block;
+}
+
+h2 {
+    display: inline-block;
+    padding-left: 15px;
+    width: 90%
+}
+
+.beginButtons {
+    margin-bottom: 5%;
+}
+
+p {
+    padding-left: 15px;
+    font-size: 20pt;
 }
