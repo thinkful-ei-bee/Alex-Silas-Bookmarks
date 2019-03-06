@@ -1,0 +1,79 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.row::before,
+.row::after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+.one,
+.one-third,
+.two-thirds,
+.one-fourth,
+.half,
+#js-adding-bookmark-form {
+  width: 100%;
+}
+
+
+/* 
+* Any styling that should be applied to screen widths larger
+* than a mobile device: tablet, laptop, desktop, etc. 
+*/
+
+@media only screen and (min-width: 800px) {
+  .one {
+    width: 100%;
+  }
+  .half {
+    width: calc(100% / 2);
+  }
+  .one-third {
+    width: calc(100% / 3);
+  }
+  .one-fourth {
+    width: calc(100% / 4);
+  }
+  .two-thirds {
+    width: calc(100% / 3 * 2);
+  }
+  .column {
+    float: left;
+  }
+}
+/* Styling */
+
+body {
+  /*background: #000000;*/
+  /*color: #f7f7f7;*/
+  font-size: 1.3em;
+  font-family: 'Lato';
+  padding: 0 10px;
+}
+
+.column {
+  border: 1px solid #666;
+  background: #343436;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.css-begin-button,
+#js-search-filter {
+    width: 50%;
+    display: inline-block;
+    float: left;
+}
