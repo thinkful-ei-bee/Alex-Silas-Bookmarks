@@ -69,7 +69,7 @@ const bookmarkList = (function() {
   }
 
   function addingBeginButtonTemplate() {
-    return `<button type="button" class="addButton css-add-button">Add a new bookmark</button>
+    return `<button type="button" class="addButton css-add-button">Add Bookmark</button>
             <form id ="js-search-filter">
                 <select class="rate">
                     <!--<option selected="selected">${store.ratingSearch}</option>-->
