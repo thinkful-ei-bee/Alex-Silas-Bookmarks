@@ -24,27 +24,16 @@ html {
     width: 100%;
 }
 
-
-/* 
-* Any styling that should be applied to screen widths larger
-* than a mobile device: tablet, laptop, desktop, etc. 
-*/
-
-
 /* Styling */
 
 body {
-    background-color: rgb(43, 42, 42);
-    /*background-color: lightblue;*/
-    /*color: #f7f7f7;*/
+    background-color: rgb(255, 255, 255);
     font-size: 30pt;
-    font-family: 'Lato';
+    font-family: 'Montserrat', sans-serif;
     padding: 0 10px;
-    margin-bottom: 40px;
-    margin-left: 50px;
-    margin-right: 50px;
-    color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin: 0px 50px 150px 50px;
+    color: rgb(41, 41, 41);
+    /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
 }
 
 .column {
@@ -55,58 +44,73 @@ body {
 }
 
 h1 {
-    text-align: center;
-}
-
-.css-add-button {
-    width: 40%;
-    display: inline-block;
-    float: left;
-}
-
-.css-filter-button {
-    width: 50%;
-    display: inline-block;
-    float: left;
-}
-
-.rate {
-    width: 10%;
-    display: inline-block;
-    float: right;
-    border: 1px solid black;
-    border-radius: 5px;
+    margin: 100px 0px 50px 0px;
+    padding: 75px 0px;
+    padding-top: 180px;
+    text-align: left;
+    font-size: 50pt;
+    font-weight: bolder;
 }
 
 button {
-    border: 1px solid black;
+    border: 2px solid rgb(114, 114, 114);
     border-radius: 5px;
     transition-duration: 0.4s;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: rgb(131, 206, 231);
-    ;
+.css-add-button {
+    font-size: 60pt;
+    font-weight: 300;
+    background-color: rgb(255, 255, 255);
+    color: rgb(146, 146, 146);
+    padding: 0px 4px 90px 4px;
+    width: 92px;
+    height: 80px;
+    display: inline-block;
+    float: left;
+    border-radius: 50%;
+}
+
+.css-filter-button {
+    font-size: 60pt;
+    font-weight: 300;
+    background-color: rgb(255, 255, 255);
+    color: rgb(146, 146, 146);
+    padding: 0px 4px 90px 4px;
+    width: 92px;
+    height: 80px;
+    display: inline-block;
+    float: left;
+    border-radius: 50%;
+}
+
+.rate{
+    font-size: 30pt;
+    font-weight: 300;
+    height: 90px;
+    width: 90px;
+    padding-left: 25px;
+    color: rgb(146, 146, 146);
+    display: inline-block;
+    float: right;
+    border: 2px solid rgb(114, 114, 114);
 }
 
 .default-bookmark {
-    border: 1px solid black;
+    border-top: 2px solid rgb(48, 48, 48);
+    border-bottom: 2px solid rgb(48, 48, 48);
     border-radius: 3px;
+    height: 160px;
     display: block;
     clear: both;
     margin-top: 5%;
-    background-color: rgb(105, 105, 105)
-}
-
-.default-bookmark:hover {
-    background-color: rgb(131, 206, 231);
-    transition-duration: 0.4s;
-    cursor: pointer;
+    padding-top: 47px;
+    background-color: rgb(255, 255, 255)
 }
 
 .expanded-bookmark {
-    border: 1px solid black;
+    border: 1px solid rgb(114, 114, 114);
     border-radius: 3px;
     display: block;
     word-wrap: break-word;
@@ -118,7 +122,7 @@ button:hover {
 
 #star {
     font-size: 30pt;
-    color: yellow;
+    color: black;
     /* Some sort of border */
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -189,6 +193,11 @@ input[type="radio"] {
     margin-right: 10px;
 }
 
+/* 
+* Any styling that should be applied to screen widths larger
+* than a mobile device: tablet, laptop, desktop, etc. 
+*/
+
 @media only screen and (min-width: 800px) {
     .one {
         width: 100%;
@@ -211,17 +220,15 @@ input[type="radio"] {
     body {
         font-size: 20pt;
     }
-    h1 {
-        font-size: 40pt;
-    }
     .beginButtons {
         margin-bottom: 10%;
     }
     button {
         font-size: 25px;
     }
-    .rate {
-        font-size: 24px;
+
+    button:hover {
+        background-color: rgb(131, 206, 231);
     }
     .container {
         font-size: 25px;

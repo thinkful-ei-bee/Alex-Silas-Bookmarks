@@ -13,10 +13,8 @@ const bookmarkList = (function() {
 
     if (store.addingBookmark) {
       $('.container').html(addingBookmarkTemplate());
-      $('.beginButtons').html('');
     } else {
       $('.container').html('');
-      $('.beginButtons').html(addingBeginButtonTemplate());
     }
 
     $('.bookmarkList').empty();
@@ -68,20 +66,9 @@ const bookmarkList = (function() {
   </form>`;
   }
 
-  function addingBeginButtonTemplate() {
-    return `<button type="button" class="addButton css-add-button">Add Bookmark</button>
-            <form id ="js-search-filter">
-                <select class="rate">
-                    <!--<option selected="selected">${store.ratingSearch}</option>-->
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <button type="submit" class="submit-filter css-filter-button">Filter by Rating: </button>
-            </form>`;
-  }
+  //function addingBeginButtonTemplate() {
+   // return `<!--<option selected="selected">${store.ratingSearch}</option>-->`;
+  //}
 
   function addingDefaultBookmark(title, rating, id) {
     return ` <div class = "item-container" data-item-id = "${id}" >
@@ -113,8 +100,18 @@ const bookmarkList = (function() {
   function handleFilter() {
     $('.beginButtons').on('submit', '#js-search-filter', event => {
       event.preventDefault();
+      console.log('hey everybody');
       store.ratingSearch = $('.rate option:selected').text();
       render();
+    });
+  }
+
+  function handleForm(){
+    $('#js-search-filter').on('change', '.rate', event => {
+      event.preventDefault();
+      console.log('changed');
+      //store.ratingSearch = $('.rate option:selected').text();
+      //render();
     });
   }
 
@@ -139,7 +136,7 @@ const bookmarkList = (function() {
   }
 
   function handleNewAddBookMark() {
-    $('.beginButtons').on('click', '.addButton', event => {
+    $('#js-add-button').on('click', '.addButton', event => {
       store.addingBookmark = true;
       render();
     });
@@ -198,6 +195,7 @@ const bookmarkList = (function() {
     handleSubmit();
     handleCancel();
     handleFilter();
+    handleForm();
 
     handleToggleExpand();
     handleVisitSite();
