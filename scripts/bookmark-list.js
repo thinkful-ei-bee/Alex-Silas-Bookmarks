@@ -35,12 +35,12 @@ const bookmarkList = (function() {
 
   function addingBookmarkTemplate() {
     return `<form id="js-adding-bookmark-form">
-      <label for="bookmark-title-entry">Add a Bookmark Title</label>
-      <input type="text" name="bookmark-title-entry" class="js-bookmark-title-entry" required placeholder="e.g., Google">
-      <label for="bookmark-url-entry">Add a Bookmark Url</label>
-      <input type="text" name="bookmark-url-entry" class="js-bookmark-url-entry" required placeholder="e.g., https://google.com">
-      <label for="bookmark-desc-entry">Add a Bookmark Description</label>
-      <input type="text" name="bookmark-desc-entry" class="js-bookmark-desc-entry" placeholder="e.g., Search Engine">
+      <label for="bookmark-title-entry"></label>
+      <input type="text" name="bookmark-title-entry" class="js-bookmark-title-entry" required placeholder="Title">
+      <label for="bookmark-url-entry"></label>
+      <input type="text" name="bookmark-url-entry" class="js-bookmark-url-entry" required placeholder="URL">
+      <label for="bookmark-desc-entry"></label>
+      <input type="text" name="bookmark-desc-entry" class="js-bookmark-desc-entry" placeholder="Description">
       <label class="block">
           <input type="radio" name="rating" required="required" value="1">
           <span>1</span>

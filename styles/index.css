@@ -44,11 +44,12 @@ body {
 }
 
 h1 {
-    margin: 100px 0px 50px 0px;
+    color: rgb(61, 61, 61);
+    margin: 100px 0px 50px 10px;
     padding: 75px 0px;
-    padding-top: 180px;
+    padding-top: 115px;
     text-align: left;
-    font-size: 50pt;
+    font-size: 62pt;
     font-weight: bolder;
 }
 
@@ -97,7 +98,20 @@ button {
     border: 2px solid rgb(114, 114, 114);
 }
 
+#js-adding-bookmark-form{
+    font-size: 40pt;
+}
+
+#js-adding-bookmark-form input{
+    border-right: 2px solid rgb(255, 255, 255);
+    border-left: 2px solid rgb(255, 255, 255);
+    border-top: 2px solid rgb(114, 114, 114);
+    border-bottom: 2px solid rgb(114, 114, 114);
+    margin-bottom: 70px;
+}
+
 .default-bookmark {
+    font-weight: lighter;
     border-top: 2px solid rgb(48, 48, 48);
     border-bottom: 2px solid rgb(48, 48, 48);
     border-radius: 3px;
@@ -105,7 +119,8 @@ button {
     display: block;
     clear: both;
     margin-top: 5%;
-    padding-top: 47px;
+    padding-top: 36px;
+    padding-right: 7px;
     background-color: rgb(255, 255, 255)
 }
 
@@ -121,20 +136,23 @@ button {
 }
 
 #star {
-    font-size: 30pt;
-    color: black;
-    /* Some sort of border */
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 36pt;
+    font-weight: 300;
+    color: rgb(154, 155, 148);
 }
 
 .rating {
-    display: inline-block;
+    float: right;
+    position: relative;
+    top: 8px;
+    margin-top: 10px;
 }
 
 h2 {
+    font-weight: 400;
+    color: rgb(95, 95, 95);
     display: inline-block;
     padding-left: 15px;
-    width: 90%;
     margin-top: 1%;
     margin-bottom: 1%;
 }
@@ -198,7 +216,7 @@ input[type="radio"] {
 * than a mobile device: tablet, laptop, desktop, etc. 
 */
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
     .one {
         width: 100%;
     }
