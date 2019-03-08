@@ -24,18 +24,26 @@
         float: left;
     }
     nav {
-        padding: 0;
+        padding-top: 70px;
+    }
+    #js-add-button {
+        position: relative;
+        right: 65px;
     }
     body {
         font-size: 16pt;
         align-self: center;
     }
     h1 {
-        margin: 32px 0px 85px 10px;
-        padding-top: 30px;
+        margin: 0px 0px 85px 10px;
+        padding-top: 1px;
         padding-bottom: 14px;
         font-size: 40pt;
         text-align: center;
+        position: relative;
+        display: inline-block;
+        top: 11px;
+        right: 23px;
     }
     h2 {
         font-size: 21pt;
@@ -45,6 +53,7 @@
     }
     button:hover {
         background-color: rgb(210, 244, 255);
+        transition: 0.3s;
     }
     .beginButtons {
         margin-bottom: 10%;
@@ -54,6 +63,7 @@
         padding: 0px 4px 67px 4px;
         width: 68px;
         height: 7px;
+        margin-left: 63px;
     }
     .rate {
         height: 53px;
@@ -86,15 +96,19 @@
         font-size: 17pt;
     }
     .rating {
-        margin-top: 1px;
+        margin-top: 6px;
     }
     .container {
         font-size: 25px;
     }
     .default-bookmark {
-        height: 45px;
-        padding-top: 0;
-        margin-top: 4%;
+        height: 55px;
+        padding-top: 1px;
+        margin-top: 3%;
+    }
+    .default-bookmark:hover {
+        background-color: rgb(210, 244, 255);
+        transition: 0.3s;
     }
     p {
         font-size: 16pt;
