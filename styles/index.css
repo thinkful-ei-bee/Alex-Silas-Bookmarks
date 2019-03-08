@@ -111,8 +111,8 @@ button:focus {
 #js-adding-bookmark-form input{
     border-right: 2px solid rgb(255, 255, 255);
     border-left: 2px solid rgb(255, 255, 255);
-    border-top: 2px solid rgb(160, 160, 160);
-    border-bottom: 2px solid rgb(160, 160, 160);
+    border-top: 2px solid rgb(214, 214, 214);
+    border-bottom: 2px solid rgb(214, 214, 214);
     margin-bottom: 70px;
 }
 
@@ -122,8 +122,8 @@ button:focus {
 
 .default-bookmark {
     font-weight: lighter;
-    border-top: 2px solid rgb(48, 48, 48);
-    border-bottom: 2px solid rgb(48, 48, 48);
+    border-top: 2px solid rgb(175, 175, 175);
+    border-bottom: 2px solid rgb(175, 175, 175);
     border-radius: 3px;
     height: 160px;
     display: block;
