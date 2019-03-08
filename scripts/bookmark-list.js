@@ -12,11 +12,11 @@ const bookmarkList = (function() {
     }
 
     if (store.addingBookmark) {
+      $('.addButton').text('-');
       $('.container').html(addingBookmarkTemplate());
-      $('.beginButtons').html('');
     } else {
+      $('.addButton').text('+');
       $('.container').html('');
-      $('.beginButtons').html(addingBeginButtonTemplate());
     }
 
     $('.bookmarkList').empty();
@@ -37,51 +37,45 @@ const bookmarkList = (function() {
 
   function addingBookmarkTemplate() {
     return `<form id="js-adding-bookmark-form">
-      <label for="bookmark-title-entry">Add a Bookmark Title</label>
-      <input type="text" name="bookmark-title-entry" class="js-bookmark-title-entry" required placeholder="e.g., Google">
-      <label for="bookmark-url-entry">Add a Bookmark Url</label>
-      <input type="text" name="bookmark-url-entry" class="js-bookmark-url-entry" required placeholder="e.g., https://google.com">
-      <label for="bookmark-desc-entry">Add a Bookmark Description</label>
-      <input type="text" name="bookmark-desc-entry" class="js-bookmark-desc-entry" placeholder="e.g., Search Engine">
-      <label class="block">
-          <input type="radio" name="rating" required="required" value="1">
-          <span>1</span>
+      <label for="bookmark-title-entry"></label>
+      <input type="text" name="bookmark-title-entry" class="js-bookmark-title-entry" required placeholder=" Title">
+      <label for="bookmark-url-entry"></label>
+      <input type="text" name="bookmark-url-entry" class="js-bookmark-url-entry" required placeholder=" URL">
+      <label for="bookmark-desc-entry"></label>
+      <input type="text" name="bookmark-desc-entry" class="js-bookmark-desc-entry" placeholder=" Description">
+      <div class="css-rating-container">
+        <label class="rating-label" for="rating">Rating: </label>
+        <label class="block">
+            <input type="radio" name="rating" required="required" value="1">
+            <span class="choice">1</span>
         </label>
-      <label class="block">
-          <input type="radio" name="rating" required="required" value="2">
-          <span>2</span>
+        <label class="block">
+            <input type="radio" name="rating" required="required" value="2">
+            <span class="choice">2</span>
         </label>
-      <label class="block">
-          <input type="radio" name="rating" required="required" value="3">
-          <span>3</span>
+        <label class="block">
+            <input type="radio" name="rating" required="required" value="3">
+            <span class="choice">3</span>
         </label>
-      <label class="block">
-          <input type="radio" name="rating" required="required" value="4">
-          <span>4</span>
+        <label class="block">
+            <input type="radio" name="rating" required="required" value="4">
+            <span class="choice">4</span>
         </label>
-      <label class="block">
-          <input type="radio" name="rating" required="required" value="5">
-          <span>5</span>
+        <label class="block">
+            <input type="radio" name="rating" required="required" value="5">
+            <span class="choice">5</span>
         </label>
-      <button type="submit" class="submit-bookmark css-adding-form-buttons">Add Bookmark</button>
-      <button type="button" class="cancelButton css-adding-form-buttons">Cancel</button>
+      </div>
+      <div class="adding-form-container">
+        <button type="submit" class="submit-bookmark css-adding-form-buttons add">Add</button>
+        <button type="button" class="cancelButton css-adding-form-buttons cancel">Cancel</button>
+      </div>
   </form>`;
   }
 
-  function addingBeginButtonTemplate() {
-    return `<button type="button" class="addButton css-add-button">Add Bookmark</button>
-            <form id ="js-search-filter">
-                <select class="rate">
-                    <!--<option selected="selected">${store.ratingSearch}</option>-->
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <button type="submit" class="submit-filter css-filter-button">Filter by Rating: </button>
-            </form>`;
-  }
+  //function addingBeginButtonTemplate() {
+   // return `<!--<option selected="selected">${store.ratingSearch}</option>-->`;
+  //}
 
   function addingDefaultBookmark(title, rating, id) {
     return ` <div class = "item-container" data-item-id = "${id}" >
@@ -103,18 +97,33 @@ const bookmarkList = (function() {
                     </div> 
                 </div > 
                 <div class = "expanded-bookmark">
-                    <p>Description: ${desc}</p>
-                    <button type = "button" class = "visit-site-button" data-item-url="${url}">Visit Site</button> 
-                    <button type = "button" class = "delete-button">Delete</button> 
+                    <p>Description: ${desc}</p> 
                 </div> 
+                <div class="extended-buttons">
+                  <button type = "button" class = "visit-site-button" data-item-url="${url}">Visit Site</button> 
+                  <button type = "button" class = "delete-button">Delete</button>
+                </div>
             </div>`;
   }
 
   function handleFilter() {
     $('.beginButtons').on('submit', '#js-search-filter', event => {
       event.preventDefault();
+      console.log('hey everybody');
       store.ratingSearch = $('.rate option:selected').text();
       render();
+    });
+  }
+
+  function handleForm(){
+    $('#js-search-filter').on('change', '.rate', event => {
+      event.preventDefault();
+      const rating = $(event.currentTarget).val();
+      store.ratingSearch = rating;
+      console.log(rating);
+      render();
+      //store.ratingSearch = $('.rate option:selected').text();
+      //render();
     });
   }
 
@@ -139,8 +148,8 @@ const bookmarkList = (function() {
   }
 
   function handleNewAddBookMark() {
-    $('.beginButtons').on('click', '.addButton', event => {
-      store.addingBookmark = true;
+    $('#js-add-button').on('click', '.addButton', event => {
+      store.addingBookmark = !store.addingBookmark;
       render();
     });
   }
@@ -198,6 +207,7 @@ const bookmarkList = (function() {
     handleSubmit();
     handleCancel();
     handleFilter();
+    handleForm();
 
     handleToggleExpand();
     handleVisitSite();
