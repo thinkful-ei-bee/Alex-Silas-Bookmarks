@@ -1,0 +1,42 @@
+/* 
+* Any styling that should be applied to screen widths larger
+* than a mobile device: tablet, laptop, desktop, etc. 
+*/
+
+
+@media only screen and (min-width: 1000px) {
+    .one {
+        width: 100%;
+    }
+    .half {
+        width: calc(100% / 2);
+    }
+    .one-third {
+        width: calc(100% / 3);
+    }
+    .one-fourth {
+        width: calc(100% / 4);
+    }
+    .two-thirds {
+        width: calc(100% / 3 * 2);
+    }
+    .column {
+        float: left;
+    }
+    body {
+        font-size: 20pt;
+    }
+    .beginButtons {
+        margin-bottom: 10%;
+    }
+    button {
+        font-size: 25px;
+    }
+
+    button:hover {
+        background-color: rgb(131, 206, 231);
+    }
+    .container {
+        font-size: 25px;
+    }
+}

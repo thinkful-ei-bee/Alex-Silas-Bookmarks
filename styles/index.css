@@ -125,14 +125,21 @@ button {
 }
 
 .expanded-bookmark {
-    border: 1px solid rgb(114, 114, 114);
-    border-radius: 3px;
     display: block;
     word-wrap: break-word;
     clear: both;
-    background-color: rgb(185, 184, 184);
     color: black;
-    text-shadow: 0px 0 black, 0 0px black, 0px 0 black, 0 0px black;
+}
+
+p {
+    padding-left: 15px;
+    color: rgb(153, 153, 153);
+    font-size: 29pt;
+    font-weight: 300;
+}
+
+.extended-buttons {
+    margin-top: 105px;
 }
 
 #star {
@@ -161,11 +168,6 @@ h2 {
     margin-bottom: 15%;
 }
 
-p {
-    padding-left: 15px;
-    font-size: 20pt;
-}
-
 
 /*.item-container {
     padding-top: 5%;
@@ -190,7 +192,12 @@ p {
 }
 
 .css-adding-form-buttons {
-    display: block;
+    background-color: rgb(191, 239, 255);
+    border-radius: 2%;
+    width: 400px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
     margin-top: 2%;
 }
 
@@ -207,52 +214,24 @@ input[type="radio"] {
 .banner {
     color: red;
     text-align: center;
+    position: relative;
+    bottom: 70px;
 }
 
-.visit-site-button {
+.visit-site-button,
+.delete-button {
+    background-color: white;
+    border: 0;
     margin-left: 15px;
     margin-bottom: 10px;
     margin-right: 10px;
 }
 
-/* 
-* Any styling that should be applied to screen widths larger
-* than a mobile device: tablet, laptop, desktop, etc. 
-*/
+.visit-site-button {
+    color: rgb(87, 187, 233);
+}
 
-@media only screen and (min-width: 1000px) {
-    .one {
-        width: 100%;
-    }
-    .half {
-        width: calc(100% / 2);
-    }
-    .one-third {
-        width: calc(100% / 3);
-    }
-    .one-fourth {
-        width: calc(100% / 4);
-    }
-    .two-thirds {
-        width: calc(100% / 3 * 2);
-    }
-    .column {
-        float: left;
-    }
-    body {
-        font-size: 20pt;
-    }
-    .beginButtons {
-        margin-bottom: 10%;
-    }
-    button {
-        font-size: 25px;
-    }
-
-    button:hover {
-        background-color: rgb(131, 206, 231);
-    }
-    .container {
-        font-size: 25px;
-    }
+.delete-button {
+    color: rgb(245, 140, 91);
+    float: right;
 }
