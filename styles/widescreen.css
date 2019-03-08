@@ -35,7 +35,7 @@
         align-self: center;
     }
     h1 {
-        margin: 0px 0px 85px 10px;
+        margin: 0px 0px 60px 10px;
         padding-top: 1px;
         padding-bottom: 14px;
         font-size: 40pt;
@@ -66,9 +66,11 @@
         margin-left: 63px;
     }
     .rate {
-        height: 53px;
+        height: 38px;
         width: 58px;
-        margin-top: 9px;
+        margin-top: 26px;
+        margin-right: 38px;
+        font-size: 21pt;
     }
     #js-adding-bookmark-form {
         font-size: 16pt;
@@ -88,9 +90,11 @@
     }
     .css-rating-container {
         margin-left: 10px;
+        margin-top: 32px;
     }
     .adding-form-container {
-        margin-bottom: 42px;
+        margin-bottom: 0px;
+        margin-top: 3px;
     }
     #star {
         font-size: 17pt;
