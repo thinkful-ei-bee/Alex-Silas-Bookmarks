@@ -97,7 +97,7 @@ const bookmarkList = (function() {
                     </div> 
                 </div > 
                 <div class = "expanded-bookmark">
-                    <p>Description: ${desc}</p> 
+                    <p>${desc}</p> 
                 </div> 
                 <div class="extended-buttons">
                   <button type = "button" class = "visit-site-button" data-item-url="${url}">Visit Site</button> 
