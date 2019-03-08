@@ -36,11 +36,11 @@ const bookmarkList = (function() {
   function addingBookmarkTemplate() {
     return `<form id="js-adding-bookmark-form">
       <label for="bookmark-title-entry"></label>
-      <input type="text" name="bookmark-title-entry" class="js-bookmark-title-entry" required placeholder="Title">
+      <input type="text" name="bookmark-title-entry" class="js-bookmark-title-entry" required placeholder=" Title">
       <label for="bookmark-url-entry"></label>
-      <input type="text" name="bookmark-url-entry" class="js-bookmark-url-entry" required placeholder="URL">
+      <input type="text" name="bookmark-url-entry" class="js-bookmark-url-entry" required placeholder=" URL">
       <label for="bookmark-desc-entry"></label>
-      <input type="text" name="bookmark-desc-entry" class="js-bookmark-desc-entry" placeholder="Description">
+      <input type="text" name="bookmark-desc-entry" class="js-bookmark-desc-entry" placeholder=" Description">
       <div class="css-rating-container">
         <label class="rating-label" for="rating">Rating: </label>
         <label class="block">
@@ -64,8 +64,8 @@ const bookmarkList = (function() {
             <span class="choice">5</span>
         </label>
       </div>
-      <button type="submit" class="submit-bookmark css-adding-form-buttons">Add</button>
-      <button type="button" class="cancelButton css-adding-form-buttons">Cancel</button>
+      <button type="submit" class="submit-bookmark css-adding-form-buttons add">Add</button>
+      <button type="button" class="cancelButton css-adding-form-buttons cancel">Cancel</button>
   </form>`;
   }
 

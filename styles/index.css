@@ -100,13 +100,15 @@ button {
 
 #js-adding-bookmark-form{
     font-size: 40pt;
+    font-weight: 300;
+    font-style: italic;
 }
 
 #js-adding-bookmark-form input{
     border-right: 2px solid rgb(255, 255, 255);
     border-left: 2px solid rgb(255, 255, 255);
-    border-top: 2px solid rgb(114, 114, 114);
-    border-bottom: 2px solid rgb(114, 114, 114);
+    border-top: 2px solid rgb(160, 160, 160);
+    border-bottom: 2px solid rgb(160, 160, 160);
     margin-bottom: 70px;
 }
 
@@ -134,7 +136,7 @@ button {
 p {
     padding-left: 15px;
     color: rgb(153, 153, 153);
-    font-size: 29pt;
+    font-size: 30pt;
     font-weight: 300;
 }
 
@@ -174,6 +176,7 @@ h2 {
 }*/
 
 .js-bookmark-title-entry {
+    font-weight: 300;
     display: block;
     width: 100%;
     margin-bottom: 2%;
@@ -192,13 +195,32 @@ h2 {
 }
 
 .css-adding-form-buttons {
-    background-color: rgb(191, 239, 255);
+    background-color: white;
+    border: 0px;
     border-radius: 2%;
     width: 400px;
     margin-left: 10px;
     margin-right: 10px;
     display: inline-block;
     margin-top: 2%;
+}
+
+.add {
+    color: rgb(87, 187, 233);
+}
+
+.cancel {
+    color: rgb(245, 140, 91);
+}
+
+.add,
+.cancel {
+    font-style: normal;
+}
+
+.rating-label {
+    color: rgb(109, 109, 109);
+    font-style: normal;
 }
 
 input[type="radio"] {
@@ -208,7 +230,9 @@ input[type="radio"] {
 }
 
 .block {
+    font-style: normal;
     margin: 7px;
+    color: rgb(133, 133, 133);
 }
 
 .banner {
