@@ -12,8 +12,10 @@ const bookmarkList = (function() {
     }
 
     if (store.addingBookmark) {
+      $('.addButton').text('-');
       $('.container').html(addingBookmarkTemplate());
     } else {
+      $('.addButton').text('+');
       $('.container').html('');
     }
 
@@ -64,8 +66,10 @@ const bookmarkList = (function() {
             <span class="choice">5</span>
         </label>
       </div>
-      <button type="submit" class="submit-bookmark css-adding-form-buttons add">Add</button>
-      <button type="button" class="cancelButton css-adding-form-buttons cancel">Cancel</button>
+      <div class="adding-form-container">
+        <button type="submit" class="submit-bookmark css-adding-form-buttons add">Add</button>
+        <button type="button" class="cancelButton css-adding-form-buttons cancel">Cancel</button>
+      </div>
   </form>`;
   }
 
@@ -145,7 +149,7 @@ const bookmarkList = (function() {
 
   function handleNewAddBookMark() {
     $('#js-add-button').on('click', '.addButton', event => {
-      store.addingBookmark = true;
+      store.addingBookmark = !store.addingBookmark;
       render();
     });
   }

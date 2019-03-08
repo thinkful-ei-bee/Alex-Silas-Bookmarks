@@ -112,6 +112,10 @@ button {
     margin-bottom: 70px;
 }
 
+.adding-form-container {
+    margin-bottom: 80px;
+}
+
 .default-bookmark {
     font-weight: lighter;
     border-top: 2px solid rgb(48, 48, 48);
