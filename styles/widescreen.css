@@ -37,6 +37,15 @@
         font-size: 40pt;
         text-align: center;
     }
+    h2 {
+        font-size: 21pt;
+    }
+    button {
+        font-size: 25px;
+    }
+    button:hover {
+        background-color: rgb(210, 244, 255);
+    }
     .beginButtons {
         margin-bottom: 10%;
     }
@@ -46,12 +55,31 @@
         width: 68px;
         height: 7px;
     }
-    button {
-        font-size: 25px;
+    #js-adding-bookmark-form {
+        font-size: 16pt;
     }
-
-    button:hover {
-        background-color: rgb(210, 244, 255);
+    #js-adding-bookmark-form input {
+        margin-bottom: 10px;
+    }
+    .css-adding-form-buttons {
+        width: 145px;
+    }
+    .css-rating-container {
+        margin-left: 10px;
+    }
+    .adding-form-container {
+        margin-bottom: 42px;
+    }
+    .default-bookmark {
+        height: 45px;
+        padding-top: 0;
+        margin-top: 4%;
+    }
+    #star {
+        font-size: 17pt;
+    }
+    .rating {
+        margin-top: 2px;
     }
     .container {
         font-size: 25px;
