@@ -41,27 +41,30 @@ const bookmarkList = (function() {
       <input type="text" name="bookmark-url-entry" class="js-bookmark-url-entry" required placeholder="URL">
       <label for="bookmark-desc-entry"></label>
       <input type="text" name="bookmark-desc-entry" class="js-bookmark-desc-entry" placeholder="Description">
-      <label class="block">
-          <input type="radio" name="rating" required="required" value="1">
-          <span>1</span>
+      <div class="css-rating-container">
+        <label class="rating-label" for="rating">Rating: </label>
+        <label class="block">
+            <input type="radio" name="rating" required="required" value="1">
+            <span class="choice">1</span>
         </label>
-      <label class="block">
-          <input type="radio" name="rating" required="required" value="2">
-          <span>2</span>
+        <label class="block">
+            <input type="radio" name="rating" required="required" value="2">
+            <span class="choice">2</span>
         </label>
-      <label class="block">
-          <input type="radio" name="rating" required="required" value="3">
-          <span>3</span>
+        <label class="block">
+            <input type="radio" name="rating" required="required" value="3">
+            <span class="choice">3</span>
         </label>
-      <label class="block">
-          <input type="radio" name="rating" required="required" value="4">
-          <span>4</span>
+        <label class="block">
+            <input type="radio" name="rating" required="required" value="4">
+            <span class="choice">4</span>
         </label>
-      <label class="block">
-          <input type="radio" name="rating" required="required" value="5">
-          <span>5</span>
+        <label class="block">
+            <input type="radio" name="rating" required="required" value="5">
+            <span class="choice">5</span>
         </label>
-      <button type="submit" class="submit-bookmark css-adding-form-buttons">Add Bookmark</button>
+      </div>
+      <button type="submit" class="submit-bookmark css-adding-form-buttons">Add</button>
       <button type="button" class="cancelButton css-adding-form-buttons">Cancel</button>
   </form>`;
   }
@@ -109,7 +112,10 @@ const bookmarkList = (function() {
   function handleForm(){
     $('#js-search-filter').on('change', '.rate', event => {
       event.preventDefault();
-      console.log('changed');
+      const rating = $(event.currentTarget).val();
+      store.ratingSearch = rating;
+      console.log(rating);
+      render();
       //store.ratingSearch = $('.rate option:selected').text();
       //render();
     });

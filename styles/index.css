@@ -200,6 +200,10 @@ input[type="radio"] {
     height: .75em;
 }
 
+.block {
+    margin: 7px;
+}
+
 .banner {
     color: red;
     text-align: center;
