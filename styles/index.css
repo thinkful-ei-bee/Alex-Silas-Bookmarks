@@ -60,6 +60,10 @@ button {
     cursor: pointer;
 }
 
+button:focus {
+    outline:0;
+}
+
 .css-add-button {
     font-size: 60pt;
     font-weight: 300;

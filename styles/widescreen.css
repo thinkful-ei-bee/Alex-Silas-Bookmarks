@@ -23,18 +23,35 @@
     .column {
         float: left;
     }
+    nav {
+        padding: 0;
+    }
     body {
-        font-size: 20pt;
+        font-size: 16pt;
+        align-self: center;
+    }
+    h1 {
+        margin: 32px 0px 50px 10px;
+        padding-top: 30px;
+        padding-bottom: 14px;
+        font-size: 40pt;
+        text-align: center;
     }
     .beginButtons {
         margin-bottom: 10%;
+    }
+    .css-add-button {
+        font-size: 45pt;
+        padding: 0px 4px 67px 4px;
+        width: 68px;
+        height: 7px;
     }
     button {
         font-size: 25px;
     }
 
     button:hover {
-        background-color: rgb(131, 206, 231);
+        background-color: rgb(210, 244, 255);
     }
     .container {
         font-size: 25px;
