@@ -55,6 +55,11 @@
         width: 68px;
         height: 7px;
     }
+    .rate {
+        height: 53px;
+        width: 58px;
+        margin-top: 9px;
+    }
     #js-adding-bookmark-form {
         font-size: 16pt;
     }
@@ -62,7 +67,7 @@
         margin-bottom: 10px;
     }
     .css-adding-form-buttons {
-        width: 145px;
+        width: 52px;
     }
     .css-rating-container {
         margin-left: 10px;
