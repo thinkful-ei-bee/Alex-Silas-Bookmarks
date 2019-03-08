@@ -96,7 +96,7 @@ button:focus {
     height: 90px;
     width: 90px;
     padding-left: 25px;
-    color: rgb(146, 146, 146);
+    color: rgb(95, 95, 95);
     display: inline-block;
     float: right;
     border: 2px solid rgb(114, 114, 114);
@@ -155,7 +155,7 @@ p {
 #star {
     font-size: 36pt;
     font-weight: 300;
-    color: rgb(154, 155, 148);
+    color: rgb(95, 95, 95);
 }
 
 .rating {
@@ -205,7 +205,7 @@ h2 {
 .css-adding-form-buttons {
     background-color: white;
     border: 0px;
-    border-radius: 2%;
+    border-radius: 5%;
     width: 400px;
     margin-left: 10px;
     margin-right: 10px;
@@ -218,7 +218,7 @@ h2 {
 }
 
 .cancel {
-    color: rgb(245, 140, 91);
+    color: rgb(136, 82, 82);
 }
 
 .add,

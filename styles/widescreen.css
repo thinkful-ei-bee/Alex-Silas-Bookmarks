@@ -31,7 +31,7 @@
         align-self: center;
     }
     h1 {
-        margin: 32px 0px 50px 10px;
+        margin: 32px 0px 85px 10px;
         padding-top: 30px;
         padding-bottom: 14px;
         font-size: 40pt;
@@ -62,12 +62,19 @@
     }
     #js-adding-bookmark-form {
         font-size: 16pt;
+        position: relative;
+        bottom: 24px;
     }
     #js-adding-bookmark-form input {
         margin-bottom: 10px;
     }
     .css-adding-form-buttons {
-        width: 52px;
+        width: 70px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .cancel {
+        width: 100px;
     }
     .css-rating-container {
         margin-left: 10px;
@@ -75,18 +82,32 @@
     .adding-form-container {
         margin-bottom: 42px;
     }
+    #star {
+        font-size: 17pt;
+    }
+    .rating {
+        margin-top: 1px;
+    }
+    .container {
+        font-size: 25px;
+    }
     .default-bookmark {
         height: 45px;
         padding-top: 0;
         margin-top: 4%;
     }
-    #star {
-        font-size: 17pt;
+    p {
+        font-size: 16pt;
+        margin: 18px 0px;
     }
-    .rating {
-        margin-top: 2px;
+    .extended-buttons {
+        margin-top: 52px;
     }
-    .container {
-        font-size: 25px;
+    .visit-site-button {
+        margin-left: 9px;
+        font-size: 14pt;
+    }
+    .delete-button {
+        font-size: 14pt;
     }
 }
