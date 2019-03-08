@@ -38,11 +38,11 @@ const bookmarkList = (function() {
   function addingBookmarkTemplate() {
     return `<form id="js-adding-bookmark-form">
       <label for="bookmark-title-entry"></label>
-      <input type="text" name="bookmark-title-entry" class="js-bookmark-title-entry" required placeholder=" Title">
+      <input type="text" name="bookmark-title-entry" class="js-bookmark-title-entry entry" required placeholder=" Title">
       <label for="bookmark-url-entry"></label>
-      <input type="text" name="bookmark-url-entry" class="js-bookmark-url-entry" required placeholder=" URL">
+      <input type="text" name="bookmark-url-entry" class="js-bookmark-url-entry entry" required placeholder=" URL">
       <label for="bookmark-desc-entry"></label>
-      <input type="text" name="bookmark-desc-entry" class="js-bookmark-desc-entry" placeholder=" Description">
+      <input type="text" name="bookmark-desc-entry" class="js-bookmark-desc-entry entry" placeholder=" Description">
       <div class="css-rating-container">
         <label class="rating-label" for="rating">Rating: </label>
         <label class="block">
@@ -50,19 +50,19 @@ const bookmarkList = (function() {
             <span class="choice">1</span>
         </label>
         <label class="block">
-            <input type="radio" name="rating" required="required" value="2">
+            <input type="radio" name="rating" class="css-radio" required="required" value="2">
             <span class="choice">2</span>
         </label>
         <label class="block">
-            <input type="radio" name="rating" required="required" value="3">
+            <input type="radio" name="rating" class="css-radio" required="required" value="3">
             <span class="choice">3</span>
         </label>
         <label class="block">
-            <input type="radio" name="rating" required="required" value="4">
+            <input type="radio" name="rating" class="css-radio" required="required" value="4">
             <span class="choice">4</span>
         </label>
         <label class="block">
-            <input type="radio" name="rating" required="required" value="5">
+            <input type="radio" name="rating" class="css-radio" required="required" value="5">
             <span class="choice">5</span>
         </label>
       </div>
