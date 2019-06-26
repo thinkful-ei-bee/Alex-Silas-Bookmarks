@@ -1,0 +1,154 @@
+/* 
+* Any styling that should be applied to screen widths larger
+* than a mobile device: tablet, laptop, desktop, etc. 
+*/
+
+
+@media only screen and (min-width: 1000px) {
+    .one {
+        width: 100%;
+    }
+    .half {
+        width: calc(100% / 2);
+    }
+    .one-third {
+        width: calc(100% / 3);
+    }
+    .one-fourth {
+        width: calc(100% / 4);
+    }
+    .two-thirds {
+        width: calc(100% / 3 * 2);
+    }
+    .column {
+        float: left;
+    }
+    nav {
+        padding-top: 70px;
+    }
+    #js-add-button {
+        position: relative;
+        right: 65px;
+    }
+    body {
+        margin-left: 10%;
+        margin-right: 10%;
+        font-size: 16pt;
+        align-self: center;
+    }
+    h1 {
+        margin: 0px 0px 60px 10px;
+        padding-top: 1px;
+        padding-bottom: 14px;
+        font-size: 40pt;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        top: 11px;
+        right: 23px;
+    }
+    h2 {
+        font-size: 14pt;
+        position: relative;
+        bottom: 3px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    button {
+        font-size: 25px;
+    }
+    button:hover {
+        background-color: rgb(210, 244, 255);
+        transition: 0.3s;
+    }
+    .beginButtons {
+        margin-bottom: 10%;
+    }
+    .css-add-button {
+        font-size: 45pt;
+        padding: 0px 4px 67px 4px;
+        width: 68px;
+        height: 7px;
+        margin-left: 63px;
+    }
+    .rate {
+        height: 38px;
+        width: 58px;
+        margin-top: 26px;
+        margin-right: 38px;
+        font-size: 21pt;
+    }
+    #js-adding-bookmark-form {
+        font-size: 11pt;
+        position: relative;
+        bottom: 24px;
+    }
+    #js-adding-bookmark-form input {
+        margin-bottom: 7px;
+    }
+    .css-adding-form-buttons {
+        width: 70px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 6px;
+        font-size: 14pt;
+    }
+    .cancel {
+        width: 100px;
+    }
+    .css-rating-container {
+        margin-left: 10px;
+        margin-top: 18px;
+    }
+    .adding-form-container {
+        margin-bottom: 0px;
+        margin-top: 3px;
+    }
+    .block{
+        font-size: 12pt;
+        margin: 12px;
+    }
+    input[type="radio"] {
+        font-size: 14pt;
+    }
+    #star {
+        font-size: 12pt;
+    }
+    .rating {
+        margin-top: 6px;
+        top: -9px;
+    }
+    .entry {
+        width: 328px;
+    }
+    .container {
+        font-size: 25px;
+    }
+    .default-bookmark {
+        height: 28px;
+        padding-top: 1px;
+        margin-top: 0px;
+    }
+    .default-bookmark:hover {
+        background-color: rgb(210, 244, 255);
+        transition: 0.3s;
+    }
+    p {
+        font-size: 10pt;
+        margin-top: 10px;
+        padding-left: 13px;
+    }
+    .extended-buttons {
+        margin-top: 25px;
+    }
+    .visit-site-button {
+        margin-left: 7px;
+        font-size: 11pt;
+    }
+    .delete-button {
+        font-size: 11pt;
+        position: relative;
+        top: 6px;
+        margin-bottom: 0px;
+    }
+}
